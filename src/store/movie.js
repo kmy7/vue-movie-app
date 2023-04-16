@@ -85,12 +85,27 @@ export default {
           })
         }
       }
-      } catch (message) {
+      // } catch (message) {
+      //   commit('updateState', {
+      //     movies: [],
+      //     message
+      //   })
+      // }
+      // serverless API변경으로 수정     
+      // } catch (error) {
+      //   commit('updateState', {
+      //   movies: [],
+      //   message: error.message
+      //   })
+      // }
+      // serverless API변경으로 수정      
+      } catch ({ message }) {
         commit('updateState', {
-          movies: [],
-          message
+        movies: [],
+        message
         })
-      } finally{
+      }       
+      finally{
         commit('updateState', {
           loading: false
         })
@@ -135,6 +150,7 @@ export default {
 }
 
 // __fetchMovie(): searchMovies()함수내에서만 활용되로록 지역함수 선언
+/*
 function _fetchMovie(payload) {
   const {title, type, number, year, page, id} = payload
   const OMDB_API_KEY = '5a7930a2' //key 발급  //f4547589abc
@@ -156,4 +172,10 @@ function _fetchMovie(payload) {
       reject(err.message)
     })
   })
+}
+*/
+
+// __fetchMovie(): serveless API에서 가져오도록 변경
+async function _fetchMovie(payload) {
+  return await axios.post('/.netlify/functions/movie', payload)
 }
