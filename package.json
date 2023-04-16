@@ -8,9 +8,9 @@
     "last 2 versions"
   ],
   "scripts": {
-    "dev": "webpack-dev-server --mode development",
+    "dev:webpack": "webpack-dev-server --mode development",
     "build": "webpack --mode production",
-    "dev:netlify": "netlify dev",
+    "dev": "netlify dev",
     "lint": "eslint --fix --ext .js,.vue"
   },
   "keywords": [],
