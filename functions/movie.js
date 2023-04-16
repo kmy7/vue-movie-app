@@ -1,10 +1,12 @@
 const axios = require('axios') //'axios'함수를 node js 환경에서는 require를 통해 axios로 가져옴.(API는 js import 사용못함)
+// const  OMDB_API_KEY = process.env.OMDB_API_KEY
+const  {OMDB_API_KEY} = process.env
 
 exports.handler = async function(event) {
   console.log(event)
   const payload = JSON.parse(event.body)  // JSON형태로 변환
   const {title, type, year, page, id} = payload
-  const OMDB_API_KEY = '5a7930a2' //key 발급  //f4547589abc
+  
   const url = id 
   ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}`
   : `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&t=${type}&y=${year}&page=1`
