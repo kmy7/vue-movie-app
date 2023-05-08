@@ -16,6 +16,8 @@ export default {
     MovieList
   },
   created() {
+    //logging
+    console.log("Home.vue created!!")
     this.$store.commit('movie/resetMovies')
   }
 }
