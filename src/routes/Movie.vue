@@ -117,9 +117,7 @@ export default {
     ]),
     requestDiffSizeImage(url, size = 700) {
       const src = url.replace('SX300', `SX${size}`)
-      
-      console.log("requestDiffSizeImage : src", src)
-      console.log("requestDiffSizeImage : src2", src)
+            
       this.$loadImage("requestDiffSizeImage: src", src)
             .then(() => {  //async swait를 사용할 수 없는 경우 사용
               this.imageLoading = false

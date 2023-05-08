@@ -59,8 +59,6 @@ export default {
   },
   methods: {
     async init() {
-      //logging
-      console.log("About Vue.....!!")
       await this.$loadImage(this.image)
       this.imageLoading = false
     }
