@@ -74,7 +74,6 @@ export default {
 
       // Store의 Mutation을 실행할 때는 .commit()메서드를 사용
       //         Actions를 실행할 때는 .dispatch()메서드를 사용
-      console.log("Search.veu apply()");  
       this.$store.dispatch('movie/searchMovies', {
         title: this.title,
         type: this.type,

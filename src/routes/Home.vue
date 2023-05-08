@@ -15,9 +15,7 @@ export default {
     Search,
     MovieList
   },
-  created() {
-    //logging
-    
+  created() {    
     this.$store.commit('movie/resetMovies')
   }
 }
