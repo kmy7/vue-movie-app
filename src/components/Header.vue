@@ -82,7 +82,8 @@ export default {
       // this.loading
 
       if(!path) return false
-      console.log(this.route)
+      console.log("1",this.route)
+      console.log("2", this.route)
       return path.test(this.$route.fullPath)
     },
     toAbout() {
